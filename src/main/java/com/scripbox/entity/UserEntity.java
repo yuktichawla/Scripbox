@@ -3,6 +3,8 @@ package com.scripbox.entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -16,9 +18,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="user")
+@Table(name="users")
 public class UserEntity {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	@Column(name = "user_name")
 	private String userName;

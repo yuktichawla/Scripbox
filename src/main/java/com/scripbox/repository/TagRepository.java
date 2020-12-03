@@ -8,6 +8,6 @@ import com.scripbox.entity.TagEntity;
 @Repository
 public interface TagRepository extends CrudRepository<TagEntity, Integer>{
 
-	TagEntity findById(String id);
+	TagEntity findById(int id);
 
 }

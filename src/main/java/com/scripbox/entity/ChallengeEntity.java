@@ -41,10 +41,10 @@ public class ChallengeEntity {
 	
 	private double creationDate;
 	
-	@OneToMany(mappedBy = "votedChallenges",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "votedChallenges",fetch=FetchType.LAZY)
 	private Set<Employee> empVote;
 	
-	@OneToMany(mappedBy = "collaboratedChallenges",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "collaboratedChallenges",fetch=FetchType.LAZY)
 	private Set<Employee> empCollaboration;
 	
 	public ChallengeEntity(Employee employee, String title, String description, TagEntity tag, double creationDate) {

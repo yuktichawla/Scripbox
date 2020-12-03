@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.scripbox.model.Errors;
 
+import lombok.extern.slf4j.Slf4j;
+
 @ControllerAdvice
 @Component
+@Slf4j
 public class ExceptionAdvice {
 	
 	@ExceptionHandler(ApplicationException.class)
@@ -19,6 +22,7 @@ public class ExceptionAdvice {
 	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<Errors> handleException (Exception ex){
+		log.error("error - {}",ex);
 		return new ResponseEntity<>(new Errors("TECHNICAL_ERR","Technical error"),HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 

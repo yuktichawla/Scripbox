@@ -22,12 +22,12 @@ import lombok.NoArgsConstructor;
 public class TagEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String id;
+	private int id;
 	private String name;
 	@OneToMany(mappedBy = "tag",fetch=FetchType.EAGER)
 	private List<ChallengeEntity> challenges;
 	
-	public TagEntity(String id, String name) {
+	public TagEntity(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
